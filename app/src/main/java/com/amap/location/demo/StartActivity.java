@@ -70,14 +70,12 @@ public class StartActivity extends ListActivity {
 			new DemoDetails(R.string.locationPurpose, R.string.locationPurpose_dec, LocationPurpose_Activity.class),
 			new DemoDetails(R.string.locationBackground,
 							R.string.locationBackground_dec,
-							Location_BackGround_Activity.class), new DemoDetails(R.string.geoFence,
-																				 R.string.geoFence_dec,
-																				 GeoFence_Activity.class),
+							Location_BackGround_Activity.class),
+			new DemoDetails(R.string.geoFence, R.string.geoFence_dec, GeoFence_Activity.class),
 			new DemoDetails(R.string.assistantLocation,
 							R.string.assistantLocation_dec,
-							Assistant_Location_Activity.class), new DemoDetails(R.string.tools,
-																				R.string.tools_dec,
-																				Tools_Activity.class),
+							Assistant_Location_Activity.class),
+			new DemoDetails(R.string.tools, R.string.tools_dec, Tools_Activity.class),
 			new DemoDetails(R.string.lastLocation, R.string.lastLocation_dec, LastLocation_Activity.class),
 			new DemoDetails(R.string.alarmCPU, R.string.alarmCPU_dec, Alarm_Location_Activity.class),
 			new DemoDetails(R.string.errorCode, R.string.errorCode_dec, ErrorCode_Activity.class),};
@@ -109,7 +107,9 @@ public class StartActivity extends ListActivity {
 		new AlertDialog.Builder(this).setTitle("温馨提示(隐私合规示例)").setMessage(spannable).setPositiveButton("同意",
 																												 new DialogInterface.OnClickListener() {
 																													 @Override
-																													 public void onClick (DialogInterface dialogInterface, int i) {
+																													 public void onClick (
+																															 DialogInterface dialogInterface,
+																															 int i) {
 																														 MapsInitializer.updatePrivacyAgree(
 																																 StartActivity.this,
 																																 true);

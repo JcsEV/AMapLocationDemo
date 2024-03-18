@@ -39,7 +39,7 @@ public class Assistant_Location_Activity extends CheckPermissionsActivity{
 		try {
 			locationClient = new AMapLocationClient(getApplicationContext());
 			//webView组件
-			webView = (WebView) findViewById(R.id.webView);
+			webView = findViewById(R.id.webView);
 			//旧版的启动H5辅助定位接口已不建议使用，建议您尽快使用新版H5辅助定位接口
 //		locationClient.startAssistantLocation();
 			//建议在设置webView参数之前调用启动H5辅助定位接口

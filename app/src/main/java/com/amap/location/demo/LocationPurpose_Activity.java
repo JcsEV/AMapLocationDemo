@@ -50,7 +50,6 @@ public class LocationPurpose_Activity extends AppCompatActivity
 	/**
 	 * Callback method to be invoked when an item in this view has been
 	 * clicked and held.
-	 * <p>
 	 * Implementers can call getItemAtPosition(position) if they need to access
 	 * the data associated with the selected item.
 	 *

@@ -2,7 +2,7 @@ plugins {
     id 'com.android.application'
 }
 
-def keystorePropertiesFile = rootProject.file("local.properties")
+File keystorePropertiesFile = rootProject.file("local.properties")
 def keystoreProperties = new Properties()
 keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
 
@@ -12,7 +12,6 @@ android {
     defaultConfig {
         applicationId "com.amap.location.demo"
         minSdk 28
-        //noinspection ExpiredTargetSdkVersion,EditedTargetSdkVersion
         targetSdk 34
         versionCode 1
         versionName "1.0"
@@ -35,12 +34,10 @@ android {
 
     buildTypes {
         debug {
-            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.debug
         }
         release {
-            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             signingConfig signingConfigs.release
         }
