@@ -24,9 +24,9 @@ public class Purpose_Trancesport_Activity extends CheckPermissionsActivity imple
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_purpose_transport);
         setTitle(getResources().getString(R.string.transportPurpose));
-        tvResult = (TextView) findViewById(R.id.tv_result);
-        btnStart = (Button) findViewById(R.id.btn_start);
-        btnStop = (Button) findViewById(R.id.btn_stop);
+        tvResult = findViewById(R.id.tv_result);
+        btnStart = findViewById(R.id.btn_start);
+        btnStop = findViewById(R.id.btn_stop);
         btnStart.setOnClickListener(this);
         btnStop.setOnClickListener(this);
 

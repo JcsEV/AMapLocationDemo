@@ -32,8 +32,6 @@ import com.amap.api.location.AMapLocationClientOption.AMapLocationProtocol;
 public class Location_BackGround_Activity extends CheckPermissionsActivity implements OnClickListener {
 	private TextView tvResult;
 	private Button btLocation;
-	private Button btEnableBackgroundLocation;
-	private Button btDisableBackgroundLocation;
 	
 	private AMapLocationClient locationClient = null;
 	private AMapLocationClientOption locationOption = null;
@@ -80,10 +78,10 @@ public class Location_BackGround_Activity extends CheckPermissionsActivity imple
 	//初始化控件
 	private void initView () {
 		
-		tvResult = (TextView) findViewById(R.id.tv_result);
-		btLocation = (Button) findViewById(R.id.bt_location);
-		btEnableBackgroundLocation = (Button) findViewById(R.id.bt_enableBackground);
-		btDisableBackgroundLocation = (Button) findViewById(R.id.bt_disableBackground);
+		tvResult = findViewById(R.id.tv_result);
+		btLocation = findViewById(R.id.bt_location);
+		Button btEnableBackgroundLocation = findViewById(R.id.bt_enableBackground);
+		Button btDisableBackgroundLocation = findViewById(R.id.bt_disableBackground);
 		
 		btLocation.setOnClickListener(this);
 		btEnableBackgroundLocation.setOnClickListener(this);
@@ -312,11 +310,6 @@ public class Location_BackGround_Activity extends CheckPermissionsActivity imple
 		
 	}
 	
-	@Override
-	public void onBackPressed () {
-		super.onBackPressed();
-	}
-	
 	/**
 	 * 销毁定位
 	 *
@@ -335,11 +328,6 @@ public class Location_BackGround_Activity extends CheckPermissionsActivity imple
 		}
 	}
 	
-	private void createNotificationChannel () {
-	
-	}
-	
-	
 	private static final String NOTIFICATION_CHANNEL_NAME = "BackgroundLocation";
 	private NotificationManager notificationManager = null;
 	boolean isCreateChannel = false;
@@ -348,7 +336,6 @@ public class Location_BackGround_Activity extends CheckPermissionsActivity imple
 	private Notification buildNotification () {
 		
 		Notification.Builder builder = null;
-		Notification notification = null;
 		//Android O上对Notification进行了修改，如果设置的targetSDKVersion>=26建议使用此种方式创建通知栏
 		if (null == notificationManager) {
 			notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
