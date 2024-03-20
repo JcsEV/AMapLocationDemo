@@ -2,9 +2,9 @@ plugins {
     id 'com.android.application'
 }
 
-File keystorePropertiesFile = rootProject.file("local.properties")
-def keystoreProperties = new Properties()
-keystoreProperties.load(new FileInputStream(keystorePropertiesFile))
+File PropertiesFile = rootProject.file("local.properties")
+def Properties = new Properties()
+Properties.load(new FileInputStream(PropertiesFile))
 
 android {
     compileSdk 34
@@ -15,20 +15,21 @@ android {
         targetSdk 34
         versionCode 1
         versionName "1.0"
+        manifestPlaceholders = [AMapKey: Properties['AMapKey']]
     }
 
     signingConfigs {
         debug {
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
+            storeFile file(Properties['storeFile'])
+            storePassword Properties['storePassword']
+            keyAlias Properties['keyAlias']
+            keyPassword Properties['keyPassword']
         }
         release {
-            storeFile file(keystoreProperties['storeFile'])
-            storePassword keystoreProperties['storePassword']
-            keyAlias keystoreProperties['keyAlias']
-            keyPassword keystoreProperties['keyPassword']
+            storeFile file(Properties['storeFile'])
+            storePassword Properties['storePassword']
+            keyAlias Properties['keyAlias']
+            keyPassword Properties['keyPassword']
         }
     }
 
