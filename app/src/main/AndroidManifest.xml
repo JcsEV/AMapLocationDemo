@@ -49,7 +49,7 @@
 		<!-- 设置key -->
 		<meta-data
 				android:name="com.amap.api.v2.apikey"
-				android:value="8d0d697fa4aa8e283266fc0be6ba43ca"/>
+				android:value="Your key"/>
 		
 		<!-- 定位需要的服务 适配Android Q需要加上android:foregroundServiceType="location"-->
 		<service
